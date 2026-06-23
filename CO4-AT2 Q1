@@ -2,7 +2,7 @@
 A logistics company operates a fleet of delivery vehicles that must deliver packages to multiple locations. Each route has a diffrent delvery cost and distance.
 The company wants to minimize the total transportaion cost while ensuring all location are connected.
 Task:
-1.model the problem as a graph and identify an apporiate greedy alforithm to solve it
+1.model the problem as a graph and identify an apporiate greedy alforithm to solve it 
 2.explain how the algorithm selects routes to achive minimum cost.
 3.Analyze the time complexity of the chosen algorithm
 4. Discuss the advantage and the limitation of using greedy approach for this problem.
