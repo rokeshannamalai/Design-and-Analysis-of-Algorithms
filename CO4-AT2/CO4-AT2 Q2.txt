@@ -29,5 +29,3 @@ max(DP[i-1][w], v_i + DP[i-1][w - w_i]) & if  w_i <= w
 4. Product Selection & Maximum ProfitBy filling out the 0/1 Knapsack decision matrix:Maximum Profit: Rs. 130,000 (Scaled value of 130)Optimal Product Selection: A, B, and D * Budget Verification:Rs.20,000 (A) + 30,000 (B) + 50,000 (D) = Rs.100,000 (Exactly hits the limit).
 5. Complexity AnalysisTime Complexity: O(N x W) where N = 4 products and W = 10 budget steps. It takes a constant 44 matrix operations.
   Space Complexity: O(N x W) to store the table. This can be optimized to O(W) by storing only the previous array row.
-
-
