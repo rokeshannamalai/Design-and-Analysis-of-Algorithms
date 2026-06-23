@@ -1,0 +1,65 @@
+1. Minimum spanning tree-prim's Algorithm(greedy)
+given a weigthed graph,find the minimum spanning tree using prim's algorithm
+sample input:
+0 2 3
+2 0 1
+3 1 0
+expected output
+total wight=3
+
+#CODE: 
+
+def p_mst(m):  #prism minimum spanning 
+    n=len(m)
+    visit=[False]*n
+    key =[float('inf')]*n #initialsing 
+    parent=[-1]*n
+    key[0]=0
+    tw=0 #total weight
+
+    for i in range(n):  #loop through all vertices 
+          u = min((v for v in range(n) if not visit[v]),key=lambda v:key[v])
+          visit[u]=True
+          tw+=key[u]
+
+          for v in range(n):  #update keys of adjucent vertices
+                 if 0 <m[u][v] < key[v] and not visit[v]:
+                      key[v]=m[u][v]
+                      parent[v]=u
+    return tw
+
+matrix=[[0,2,3],[2,0,1],[3,1,0]]
+
+print("Total weight =",p_mst(matrix)) #print the total weight
+
+2. minimum spanning tree-kruskal Algrithms( greedy)
+this problem connect all nodes in a graph with minimum total edge cost. Kruskal's algorithm select edges in increasing order while avoiding cycles.
+sample input
+edges=(0,1,2),(1,2,3),(1,3,4),(2,3,5)
+expected output:
+MST Cost=7
+
+#CODE:
+
+def kruskal_mst(edges):
+    # Sort edges by weight
+    edges = sorted(edges, key=lambda x: x[2])
+    parent = {}
+
+    def find(i):
+        if i not in parent: parent[i] = i
+        if parent[i] != i: parent[i] = find(parent[i])
+        return parent[i]
+
+    mst_cost = 0
+    for u, v, w in edges:
+        root_u, root_v = find(u), find(v)
+        if root_u != root_v:
+            parent[root_u] = root_v
+            mst_cost += w
+
+    return mst_cost
+
+# Test
+edges = [(0,1,2), (1,2,3), (1,3,4), (2,3,5)]
+print("MST Cost =", kruskal_mst(edges))
