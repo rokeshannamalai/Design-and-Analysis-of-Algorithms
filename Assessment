@@ -1,4 +1,4 @@
-Minimum spanning tree-prim's Algorithm(greedy)
+1. Minimum spanning tree-prim's Algorithm(greedy)
 given a weigthed graph,find the minimum spanning tree using prim's algorithm
 sample input:
 0 2 3
